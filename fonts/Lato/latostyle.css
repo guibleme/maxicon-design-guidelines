@@ -1,0 +1,82 @@
+@charset "utf-8";
+body {
+	font-family: "LatoWeb" !important;
+	font-size: 10pt;
+	font-style: normal;
+}
+
+#nav, nav, .nav-link {
+	font-family: "LatoWeb" ;
+}
+
+.large {
+	font-size: 2.2em;
+}
+#main {
+	font-family: "LatoWeb";
+	font-style: normal;	
+	font-size: 1.5em;
+  line-height: 1.5;
+}
+
+.font-weight--heavy {
+	font-family: "LatoWebHeavy";
+}
+
+.font-weight--black {
+	font-family: "LatoWebBlack";
+}
+
+.font-weight--bold {
+	font-family: "LatoWebBold";
+}
+
+.font-weight--medium {
+	font-family: "LatoWebMedium";
+}
+
+.font-weight--regular {
+	font-family: "LatoWeb";
+}
+
+.font-weight--light {
+	font-family: "LatoWebLight";
+}
+
+.font-weight--thin {
+	font-family: "LatoWebThin";
+}
+
+.font-weight--hair {
+	font-family: "LatoWebHair";
+}
+
+.font-size--xxlarge {
+	font-size: 32px !important;
+	line-height: 51.78px;
+}
+
+.font-size--xlarge {
+	font-size: 24px !important;
+	line-height: 38.83px;
+}
+
+.font-size--large {
+	font-size: 20px !important;
+	line-height: 32.36px;
+}
+
+.font-size--medium {
+	font-size: 16px !important;
+	line-height: 25.88px;
+}
+
+.font-size--small {
+	font-size: 10px !important;
+	line-height: 16px;
+}
+
+.font-size--regular {
+	font-size: 14px !important;
+	line-height: 23px;
+}
