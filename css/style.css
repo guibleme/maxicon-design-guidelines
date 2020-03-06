@@ -248,6 +248,7 @@ aside h4{
 	padding:20px;
 	background:#282E34;
 	border-radius: 3px;
+	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
 }
 .menu-box ul{
 	margin:0;
