@@ -14,8 +14,11 @@ jQuery(function () {
     var t = $("aside"),
         r = $(window).scrollTop(),
         n = jQuery(window).width();
-    n > 768 && (r > 130 ? t.addClass("fixed") : t.removeClass("fixed"));
+    m = jQuery(document).height();
+    n > 768 && (r > 130 && m - r > 820 ? t.addClass("fixed") : t.removeClass("fixed"));
+    n > 768 && (m - r < 820 ? t.addClass("fix-bottom") : t.removeClass("fix-bottom"));
     n < 768 ? t.removeClass("fixed") : null;
+    console.log(m - r);
 }), $(document).ready(function () {
     prettyPrint(), $(".menu-box a").click(function () {
         return $("html, body").animate({
@@ -25,3 +28,14 @@ jQuery(function () {
         }), !1
     })
 });
+
+function copyFunction(colorClass) {
+    const el = document.createElement('textarea');
+    el.className = "display-none";
+    el.value = colorClass;
+    document.getElementById('cores').appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    console.log("Classe copiada: " + colorClass);
+    document.getElementById('cores').removeChild(el);
+}
