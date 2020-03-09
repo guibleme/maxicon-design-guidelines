@@ -33,9 +33,9 @@ function copyFunction(colorClass) {
     const el = document.createElement('textarea');
     el.className = "display-none";
     el.value = colorClass;
-    document.getElementById('cores').appendChild(el);
+    document.getElementById('footer').appendChild(el);
     el.select();
     document.execCommand('copy');
     console.log("Classe copiada: " + colorClass);
-    document.getElementById('cores').removeChild(el);
+    document.getElementById('footer').removeChild(el);
 }

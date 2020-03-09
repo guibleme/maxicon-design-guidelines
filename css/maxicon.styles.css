@@ -307,6 +307,11 @@ aside h4 {
   border-bottom: 0;
 }
 
+.menu-box li:last-child a:hover {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
 .content-info {
   padding-right: 16px;
   padding-left: calc(300px + 16px);
@@ -317,7 +322,7 @@ aside h4 {
   margin-bottom: 32px;
   border-bottom: 1px solid #DBDBE8;
   background-color: #FFFFFF;
-  padding: 16px 24px;
+  padding: 24px 32px;
   border-radius: 3px;
   -webkit-box-shadow: 0 4px 12px rgba(152, 152, 166, 0.25);
           box-shadow: 0 4px 12px rgba(152, 152, 166, 0.25);
@@ -329,19 +334,6 @@ aside h4 {
   border-bottom: 0;
 }
 
-/* 
-.content-info h3{
-	font-size:24px;
-	font-weight:400;
-	color:#444;
-	margin:0 0 30px 0;
-}
-.content-info p{
-	color:#3D3D3D;
-	line-height:24px;
-	font-size:16px;
-	font-weight:300;
-} */
 .content-info ul {
   margin: 0 0 14px 0;
 }
@@ -768,5 +760,9 @@ footer {
 
 .bg-purple--3 {
   background-color: #652CDB;
+}
+
+.italic {
+  font-style: italic;
 }
 /*# sourceMappingURL=maxicon.styles.css.map */
