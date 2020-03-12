@@ -1,0 +1,10 @@
+@mixin transition($props) {
+  -webkit-transition: $props;
+  -moz-transition: $props;
+  -o-transition: $props;
+  transition: $props;
+}
+
+@mixin column-width($col_num) {
+  width: calc(100 / 12 * $col_num);
+}
