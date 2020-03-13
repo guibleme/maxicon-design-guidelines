@@ -1,7 +1,7 @@
 @import 'maxicon.colors.scss';
 @import 'maxicon.spacing.scss';
 @import 'maxicon.sizes.scss';
-@import 'maxicon.mixin.scss';
+@import  "mixin";
 
 body {
   background:$colors-neutral--2;
@@ -11,15 +11,14 @@ body {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	box-sizing: border-box;
+	@include vendors(box-sizing, border-box);
 }
 
 
 a{
 	@include transition(all .3s ease);
-  text-decoration:none;
+	text-decoration:none;
 }
 
 .content-info a{
@@ -44,7 +43,7 @@ a{
 		color: calc(inherited + 10%);
 		background-color: calc(inherited + 10%);
 		cursor: pointer;
-		box-shadow: $elevation--1;
+		box-shadow: $elevation--3;
 		transform: translateY(-2px);
 	}
 }
@@ -188,55 +187,27 @@ h1, h2, h3, h4, h5, h6 {
 	padding-right: $space-2;
 	padding-left: $space-2;
 }
-.col-lg-12 {
-  @include column_width(12);
-}
+.col-lg-12 { @include column_width(12); }
+.col-lg-11 { @include column_width(11); }
+.col-lg-10 { @include column_width(10); }
+.col-lg-9 { @include column_width(9); }
+.col-lg-8 { @include column-width(8); }
+.col-lg-7 { @include column-width(7); }
+.col-lg-6 { @include column-width(6); }
+.col-lg-5 { @include column-width(5); }
+.col-lg-4 { @include column-width(4); }
+.col-lg-3 { @include column-width(3); }
+.col-lg-2 { @include column-width(2); }
+.col-lg-1 { @include column-width(1); }
 
-.col-lg-11 {
-  @include column_width(11);
-}
-
-.col-lg-10 {
-  @include column_width(10);
-}
-
-.col-lg-9 {
-  @include column_width(9);
-}
-
-.col-lg-8 {
-  @include column_width(8);
-}
-
-.col-lg-7 {
-	width: 58.33333333%;
-	}
-.col-lg-6 {
-	width: 50%;
-	}
-.col-lg-5 {
-	width: 41.66666667%;
-	}
-.col-lg-4 {
-	width: 33.33333333%;
-	}
-.col-lg-3 {
-	width: 25%;
-	}
-.col-lg-2 {
-	width: 16.66666667%;
-	}
-.col-lg-1 {
-	width: 8.33333333%;
-}
-.center{
-	text-align:center;
+.center, .btn {
+	@include textAlign(center);
 }
 .left{
-	text-align:left;
+	@include textAlign(left);
 }
 .right{
-	text-align:right;
+	@include textAlign(right);
 }
 .btn{
 	display:inline-block;
@@ -246,7 +217,6 @@ h1, h2, h3, h4, h5, h6 {
 	background: $color-info--1;
 	/* color:#fff; */
 	font-weight:400;
-	text-align:center;
 	font-size:14px;
 }
 .btn:hover{
@@ -269,9 +239,9 @@ header{
 	height:34px;
 }
 
-section .container{
+/*section .container{
 		/* background:#fff; */
-}
+//}
 
 .content-wrap{
 	padding: 24px 0
@@ -283,6 +253,12 @@ aside{
 	float: left;
 	padding-left: $space-2;
 	width: 285px;
+
+	h4 {
+    font-size: 20px;
+    font-weight:400;
+    margin:0 0 30px 0;
+	}
 }
 .fixed{
 	position: fixed;
@@ -293,43 +269,46 @@ aside{
 	position: absolute;
 	bottom : $space-3;
 }
-aside h4{
-	font-size: 20px;
-	font-weight:400;
-	margin:0 0 30px 0;
-}
 
 .menu-box{
 	padding: $space-3 $space-3 0 $space-3;
 	background: $color-maxi--3;
 	border-radius: $border-radius;
 	box-shadow: $elevation--2;
-}
-.menu-box ul{
-	margin:0;
-	padding:0;
-}
 
-.menu-box li{
-	display:block;
-}
-.menu-box li a{
-	display:block;
-	padding: $space-2 $space-3;
-	margin-left: -$space-3;
-    margin-right: -$space-3;
-	color: $colors-neutral--0;
-	border-bottom: $border-size--1 solid #425260;
-}
-.menu-box li a:hover :not(a.current), .menu-box li a.current{
-	background:#385772;
-}
-.menu-box li:last-child a{
-	border-bottom:0;
-	&:hover {
-		border-bottom-left-radius: $border-radius;
-		border-bottom-right-radius: $border-radius;
+	ul {
+    margin:0;
+	  padding:0;
 	}
+
+  li {
+		display:block;
+		
+		a {
+      display:block;
+      padding: $space-2 $space-3;
+      margin-left: -$space-3;
+      margin-right: -$space-3;
+      color: $colors-neutral--0;
+			border-bottom: $border-size--1 solid #425260;
+			
+			& {
+        background: $color-maxi--2;
+			}
+
+			.current {
+        background:$color-maxi--1;
+			}
+		}
+
+		:last-child a{
+      border-bottom:0;
+    	&:hover {
+		  border-bottom-left-radius: $border-radius;
+		  border-bottom-right-radius: $border-radius;
+	    }
+		}
+  }
 }
 
 .content-info{
@@ -391,49 +370,20 @@ footer{
 }
 
 @media only screen and (max-width: 1200px) {
-    .container{
-        width:970px;
-    }
-	.hidden-md{
-		display:none;
-	}
-	.col-md-12 {
-		width: 100%;
-		}
-	.col-md-11 {
-		width: 91.66666667%;
-		}
-	.col-md-10 {
-		width: 83.33333333%;
-		}
-	.col-md-9 {
-		width: 75%;
-		}
-	.col-md-8 {
-		width: 66.66666667%;
-		}
-	.col-md-7 {
-		width: 58.33333333%;
-		}
-	.col-md-6 {
-		width: 50%;
-		}
-	.col-md-5 {
-		width: 41.66666667%;
-		}
-	.col-md-4 {
-		width: 33.33333333%;
-		}
-	.col-md-3 {
-		width: 25%;
-		}
-	.col-md-2 {
-		width: 16.66666667%;
-		}
-	.col-md-1 {
-		width: 8.33333333%;
-	}
-	
+    .container{ width:970px; }
+	.hidden-md{ display:none; }
+	.col-md-12 { @include column-width(12); }
+	.col-md-11 { @include column-width(11); }
+	.col-md-10 { @include column-width(10); }
+	.col-md-9 { @include column-width(9); }
+	.col-md-8 { @include column-width(8); }
+	.col-md-7 { @include column-width(7); }
+	.col-md-6 { @include column-width(6); }
+	.col-md-5 { @include column-width(5); }
+	.col-md-4 { @include column-width(4); }
+	.col-md-3 { @include column-width(3); }
+	.col-md-2 { @include column-width(2); }
+	.col-md-1 { @include column-width(1); }
 }
 
 
@@ -852,4 +802,12 @@ footer{
 	height: 100%;
 	text-align: center;
 	line-height: 32px;
+}
+
+.test {
+	@include test();
+}
+
+.test2 {
+	@include test2();
 }

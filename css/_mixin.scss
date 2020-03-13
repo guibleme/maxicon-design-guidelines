@@ -1,0 +1,29 @@
+@mixin vendors($propertie, $value) {
+  -webkit-#{$propertie}: $value;
+  -moz-#{$propertie}: $value;
+  -o-#{$propertie}: $value;
+}
+
+@mixin transition($props) {
+  @include vendors(transition, $props);
+  transition: $props;
+}
+
+@mixin column-width($col_num) {
+  width: 100 / 12 * $col_num;
+}
+
+@mixin textAlign($alignment) {
+  text-align: $alignment;
+}
+
+$color-test: red;
+
+@mixin test {
+  $color-test: blue;
+  color: $color-test;
+}
+
+@mixin test2 {
+  color: $color-test;
+}
