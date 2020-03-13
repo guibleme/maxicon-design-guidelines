@@ -4,10 +4,10 @@
 @import  "mixin";
 
 body {
-  background:$colors-neutral--2;
-  color: $color-default--text;
-  font-size: 14px;
-  font-weight: 300;
+    background:$color-neutral--2;
+    color: $color-default--text;
+	font-size: 14px;
+	font-weight: 300;
 }
 
 * {
@@ -30,7 +30,7 @@ a{
 }
 
 .card {
-	background-color: $colors-neutral--1;
+	background-color: $color-neutral--1;
 	padding: $space-2;
 	border-radius: $border-radius;
 }
@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
 	text-rendering: optimizeLegibility;
 
 	&.separator {
-		border-bottom: 1px solid $colors-neutral--3;
+		border-bottom: 1px solid $color-neutral--3;
 	}
 }
 .text-right {
@@ -229,7 +229,7 @@ header{
 	background:$color-maxi--3;
 }
 .slogan{
-	color: $colors-neutral--0;
+	color: $color-neutral--0;
 	font-weight:300;
 	font-size:20px;
 	line-height:34px;
@@ -249,7 +249,7 @@ header{
 
 
 aside{
-	color: $colors-neutral--0;
+	color: $color-neutral--0;
 	float: left;
 	padding-left: $space-2;
 	width: 285px;
@@ -279,6 +279,25 @@ aside{
 	ul {
     margin:0;
 	  padding:0;
+.menu-box li{
+	display:block;
+}
+.menu-box li a{
+	display:block;
+	padding: $space-2 $space-3;
+	margin-left: -$space-3;
+    margin-right: -$space-3;
+	color: $color-neutral--0;
+	border-bottom: $border-size--1 solid #425260;
+}
+.menu-box li a:hover, .menu-box li a.current{
+	background:#385772;
+}
+.menu-box li:last-child a{
+	border-bottom:0;
+	&:hover {
+		border-bottom-left-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
 	}
 
   li {
@@ -318,8 +337,8 @@ aside{
 .section-txt{
 	padding-bottom: $space-2;
 	margin-bottom: $space-4;
-	border-bottom: $border-size--1 solid $colors-neutral--3;
-	background-color: $colors-neutral--0;
+	border-bottom: $border-size--1 solid $color-neutral--3;
+	background-color: $color-neutral--0;
 	padding: $space-3 $space-4;
 	border-radius: $border-radius;
 	box-shadow: $elevation--2;
@@ -792,6 +811,80 @@ footer{
 }
 .bg-dark {
 	background-color: $color-dark;
+}
+
+.text-neutral--1 {
+	color: $color-neutral--1;
+}
+.bg-neutral--1 {
+	background-color: $color-neutral--1;
+}
+
+
+.text-neutral--2 {
+	color: $color-neutral--2;
+}
+.bg-neutral--2 {
+	background-color: $color-neutral--2;
+}
+
+.text-neutral--3 {
+	color: $color-neutral--3;
+}
+.bg-neutral--3 {
+	background-color: $color-neutral--3;
+}
+
+.text-neutral--4 {
+	color: $color-neutral--4;
+}
+.bg-neutral--4 {
+	background-color: $color-neutral--4;
+}
+
+.text-neutral--5 {
+	color: $color-neutral--5;
+}
+.bg-neutral--5 {
+	background-color: $color-neutral--5;
+}
+
+.text-neutral--6 {
+	color: $color-neutral--6;
+}
+.bg-neutral--6 {
+	background-color: $color-neutral--6;
+}
+
+
+.text-neutral--7 {
+	color: $color-neutral--7;
+}
+.bg-neutral--7 {
+	background-color: $color-neutral--7;
+}
+
+
+.text-neutral--8 {
+	color: $color-neutral--8;
+}
+.bg-neutral--8 {
+	background-color: $color-neutral--8;
+}
+
+
+.text-neutral--9 {
+	color: $color-neutral--9;
+}
+.bg-neutral--9 {
+	background-color: $color-neutral--9;
+}
+
+.text-neutral--0 {
+	color: $color-neutral--0;
+}
+.bg-neutral--0 {
+	background-color: $color-neutral--0;
 }
 
 .italic {
