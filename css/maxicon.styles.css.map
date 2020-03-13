@@ -5,7 +5,8 @@
         "maxicon.styles.scss",
         "maxicon.colors.scss",
         "maxicon.spacing.scss",
-        "maxicon.sizes.scss"
+        "maxicon.sizes.scss",
+        "_mixin.scss"
     ],
     "names": [],
     "file": "maxicon.styles.css"
