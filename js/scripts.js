@@ -1,3 +1,6 @@
+const closeBtnFeedback = document.getElementById('close-msg');
+closeBtnFeedback.onclick = hideCopyFeedback;
+
 jQuery(function () {
     var t = $(".section-txt"),
         r = $("nav ul li"),
@@ -36,6 +39,26 @@ function copyFunction(colorClass) {
     document.getElementById('footer').appendChild(el);
     el.select();
     document.execCommand('copy');
-    console.log("Classe copiada: " + colorClass);
+    showCopyFeedback("Classe copiada: " + colorClass);
     document.getElementById('footer').removeChild(el);
+}
+
+function showCopyFeedback(message) {
+    const msg = document.querySelector('div#actionmsg-container p');
+    const msg_container = document.getElementById('actionmsg-container');
+    msg.innerText = message;
+    msg_container.style.visibility = 'visible';
+    msg_container.style.display = 'flex';
+    
+    setTimeout(() => {
+        hideCopyFeedback();
+    }, 3000);
+}
+
+function hideCopyFeedback() {
+    const msg = document.querySelector('div#actionmsg-container p');
+    msg.innerText = "";
+    const msg_container = document.getElementById('actionmsg-container');
+    msg_container.style.visibility = 'hidden';
+    msg_container.style.display = 'none';
 }

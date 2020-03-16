@@ -6,7 +6,7 @@
 $column_names: ("small": "sm", "medium": "md", "large": "lg", "extralarge": "xs");
 
 body {
-  background:$colors-neutral--2;
+  background:$color-neutral--2;
   color: $color-default--text;
   @include font_props(
     map-get($font_sizes, "small"),
@@ -220,7 +220,7 @@ aside{
 			padding: $space-2 $space-3;
 			margin-left: -$space-3;
 			margin-right: -$space-3;
-			color: $colors-neutral--0;
+			color: $color-neutral--0;
 
 			&.current {
 				background: nth($maxi, 1);
@@ -246,7 +246,7 @@ aside{
 					padding: $space-2 $space-3;
 					margin-left: -$space-3;
 					margin-right: -$space-3;
-					color: $colors-neutral--0;
+					color: $color-neutral--0;
 					border-bottom: $border-size--1 solid #425260;
 					
 					& {
@@ -403,7 +403,7 @@ h2 {
 	background-color: nth($maxi, 3);
 	padding: 20px;
 	box-shadow: 6px 6px 6px rgba(50, 50, 50, 0.3);
-	color: $colors-neutral--2;
+	color: $color-neutral--2;
 }
 
 div.footer-contrast {
@@ -413,6 +413,70 @@ div.footer-contrast {
 	);
 
 	margin-bottom: 20px;
+}
+
+div#actionmsg-container, div#actionmsg-container * {
+	@include transition(all 0.3s ease 0.1s);
+}
+
+div#actionmsg-container, div#actionmsg-container *,
+div#actionmsg-container:hover, div#actionmsg-container:hover * {
+	opacity: 1;
+}
+
+div#actionmsg-container:hover button#close-msg {
+	visibility: visible;
+}
+
+div#actionmsg-container {
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	bottom: 5px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	background-color: rgb(0, 0, 0);
+	border-radius: 15px;
+	animation: actionmsg_anim 0.5s ease 0.1s;
+	animation-fill-mode: forwards;
+	cursor: default;
+	visibility: hidden;
+	display: none;
+	opacity: 0;
+}
+
+div#actionmsg-container p {
+	color: white;
+	padding: 0 24px;
+}
+
+button#close-msg {
+  background-color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease 0.1s;
+  padding: 4px 4px;
+  color: white;
+  transform: translate(-10%, -10px);
+  visibility: hidden;
+  cursor: pointer;
+}
+
+button#close-msg:hover {
+	background-color: rgb(15, 15, 15);
+	color: tomato;
+}
+
+@keyframes actionmsg_anim {
+	from { 
+	  opacity: 0;
+	  bottom: -25px;
+	}
+
+	to {
+		opacity: 0.9;
+		bottom: 5px;
+	}
 }
 
 @import 'maxicon.custom.scss';
