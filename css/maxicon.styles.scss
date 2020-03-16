@@ -8,8 +8,10 @@ $column_names: ("small": "sm", "medium": "md", "large": "lg", "extralarge": "xs"
 body {
   background:$colors-neutral--2;
   color: $color-default--text;
-  font-size: map-get($map: $font_sizes, $key: "small");
-  font-weight: map-get($map: $font_weights, $key: "light");;
+  @include font_props(
+    map-get($font_sizes, "small"),
+    map-get($font_weights, "light")
+  );
 }
 
 * {
@@ -32,9 +34,9 @@ a{
 }
 
 .card {
-  background-color: $colors-neutral--1;
-  padding: $space-2;
-  border-radius: $border-radius;
+	background-color: $color-neutral--1;
+	padding: $space-2;
+	border-radius: $border-radius;
 }
 
 .hoverable {
@@ -71,9 +73,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: map-get($map: $font_sizes, $key: "regular");
   text-rendering: optimizeLegibility;
 
-  &.separator {
-    border-bottom: 1px solid $colors-neutral--3;
-  }
+	&.separator {
+		border-bottom: 1px solid $color-neutral--3;
+	}
 }
 .text-right {
   text-align: right;
@@ -158,7 +160,7 @@ header{
   background: nth($maxi, 3);
 }
 .slogan{
-	color: $colors-neutral--0;
+	color: $color-neutral--0;
 	@include font_props(
 		map-get($font-weights, "light"),
 		map-get($font-sizes, "large")
@@ -176,7 +178,7 @@ header{
 }
 
 aside{
-  color: $colors-neutral--0;
+  color: $color-neutral--0;
   float: left;
   padding-left: $space-2;
   width: 285px;
@@ -271,8 +273,8 @@ aside{
 .section-txt{
   padding-bottom: $space-2;
   margin-bottom: $space-4;
-  border-bottom: $border-size--1 solid $colors-neutral--3;
-  background-color: $colors-neutral--0;
+  border-bottom: $border-size--1 solid $color-neutral--3;
+  background-color: $color-neutral--0;
   padding: $space-3 $space-4;
   border-radius: $border-radius;
   box-shadow: $elevation--2;
