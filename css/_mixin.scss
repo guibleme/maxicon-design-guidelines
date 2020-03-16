@@ -9,21 +9,47 @@
   transition: $props;
 }
 
-@mixin column-width($col_num) {
-  width: 100 / 12 * $col_num;
+@function column-width($col_num) {
+  @return 100 / 12 * $col_num;
 }
 
-@mixin textAlign($alignment) {
-  text-align: $alignment;
+@mixin generate_col_classes($col) {
+  @for $i from 0 to 12 {
+    .col-#{$col}-#{$i + 1} {
+      width: column-width($i + 1) * 1%; 
+    }
+  }
 }
 
-$color-test: red;
-
-@mixin test {
-  $color-test: blue;
-  color: $color-test;
+@mixin float_left($class) {
+  #{$class} {
+    float: left;
+  }
 }
 
-@mixin test2 {
-  color: $color-test;
+@mixin col_lg_float_left {
+  @for $i from 0 to 10 {
+    @include float_left(#{".col-lg-"}#{$i + 1});
+  }
+}
+
+@mixin column_properties($col_names) {
+  $prefix : ".col-";
+  @for $i from 0 to 12 {
+    $sufix: #{"-"}#{$i + 1};
+    #{$prefix}#{map-get($col_names, "small")}#{$sufix},
+    #{$prefix}#{map-get($col_names, "medium")}#{$sufix},
+    #{$prefix}#{map-get($col_names, "large")}#{$sufix},
+    #{$prefix}#{map-get($col_names, "extralarge")}#{$sufix} {
+      position: relative;
+      min-height: 1px;
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+}
+
+@mixin font_props($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
 }

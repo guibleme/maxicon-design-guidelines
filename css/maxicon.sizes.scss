@@ -6,3 +6,23 @@ $elevation--0: none;
 $elevation--1: 0 2px 6px rgba(152, 152, 166, 0.25);
 $elevation--2: 0 4px 12px rgba(152, 152, 166, 0.25);
 $elevation--3: 0 8px 20px rgba(152, 152, 166, 0.25);
+
+$font_sizes: (
+	"small": 14px,
+	"regular": 16px,
+  "large": 20px,
+  "big": 24px,
+  "bigg": 28px,
+  "extralarge": 32px,
+  "extrabig": 36px
+);
+
+$font_weights: (
+	"light": 300,
+  "regular": 400,
+  "big": 500,
+  "bold": 600,
+  "bolder": 700,
+  "extrabold": 800,
+  "extrabolder": 900
+);
