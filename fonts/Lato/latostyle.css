@@ -38,7 +38,7 @@ body {
 }
 
 .font-weight--hair {
-	font-family: "LatoWebHair";
+	font-family: "LatoWebHairline";
 }
 
 .font-size--xxlarge, h1{
@@ -64,6 +64,7 @@ body {
 	line-height: 25.88px;
     text-rendering: optimizeLegibility;
 }
+
 
 .font-size--small, h6 {
 	font-size: 10px !important;
