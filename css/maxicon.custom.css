@@ -289,4 +289,84 @@
 .bg-dark {
   background-color: #41414A;
 }
+
+.text-neutral--0 {
+  color: #FFFFFF;
+}
+
+.text-neutral--1 {
+  color: #F5F5FA;
+}
+
+.text-neutral--2 {
+  color: #E6E6F0;
+}
+
+.text-neutral--3 {
+  color: #DBDBE8;
+}
+
+.text-neutral--4 {
+  color: #D3D3E2;
+}
+
+.text-neutral--5 {
+  color: #C5C5D6;
+}
+
+.text-neutral--6 {
+  color: #A9A9B8;
+}
+
+.text-neutral--7 {
+  color: #9898A6;
+}
+
+.text-neutral--8 {
+  color: #6B6B78;
+}
+
+.text-neutral--9 {
+  color: #41414A;
+}
+
+.bg-neutral--0 {
+  background-color: #FFFFFF;
+}
+
+.bg-neutral--1 {
+  background-color: #F5F5FA;
+}
+
+.bg-neutral--2 {
+  background-color: #E6E6F0;
+}
+
+.bg-neutral--3 {
+  background-color: #DBDBE8;
+}
+
+.bg-neutral--4 {
+  background-color: #D3D3E2;
+}
+
+.bg-neutral--5 {
+  background-color: #C5C5D6;
+}
+
+.bg-neutral--6 {
+  background-color: #A9A9B8;
+}
+
+.bg-neutral--7 {
+  background-color: #9898A6;
+}
+
+.bg-neutral--8 {
+  background-color: #6B6B78;
+}
+
+.bg-neutral--9 {
+  background-color: #41414A;
+}
 /*# sourceMappingURL=maxicon.custom.css.map */
